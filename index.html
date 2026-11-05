@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Учебная демонстрация — Telegram</title>
+  <style>
+    :root { color-scheme: light; --blue:#229ed9; --ink:#17212b; --muted:#70808f; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px;
+      background:linear-gradient(145deg,#d9f0fb,#eef5f8); font-family:Arial,Helvetica,sans-serif; color:var(--ink); }
+    .card { width:min(100%,420px); background:#fff; border-radius:20px; padding:30px 26px;
+      box-shadow:0 12px 40px #1c52651c; text-align:center; }
+    .notice { display:inline-block; margin-bottom:20px; padding:7px 11px; border-radius:999px;
+      background:#fff3d8; color:#8a5a00; font-size:12px; font-weight:700; letter-spacing:.04em; }
+    .logo { width:66px; height:66px; margin:0 auto 16px; display:grid; place-items:center;
+      border-radius:50%; background:var(--blue); color:white; font-size:32px; }
+    h1 { margin:0 0 10px; font-size:24px; }
+    p { color:var(--muted); line-height:1.5; margin:0 0 18px; }
+    .demo-panel { text-align:left; background:#f4f8fb; border:1px solid #e2edf3; padding:15px;
+      border-radius:12px; margin:20px 0; font-size:14px; line-height:1.5; }
+    button { width:100%; border:0; border-radius:10px; padding:14px 18px; background:var(--blue);
+      color:white; font-size:16px; font-weight:700; cursor:pointer; }
+    button:hover { filter:brightness(.96); }
+    #lesson { display:none; text-align:left; margin-top:18px; padding:16px; border-radius:12px;
+      background:#eaf8ef; border:1px solid #bce5c9; line-height:1.5; }
+    #lesson h2 { margin:0 0 8px; font-size:18px; color:#176b37; }
+    #lesson ul { padding-left:20px; margin-bottom:0; }
+    footer { margin-top:20px; font-size:12px; color:#8795a1; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="notice">УЧЕБНАЯ СИМУЛЯЦИЯ · НЕ ОФИЦИАЛЬНЫЙ САЙТ</div>
+    <div class="logo" aria-hidden="true">➤</div>
+    <h1>Демонстрация входа</h1>
+    <p>Эта страница показывает, как может выглядеть приманка для фишинга. Для продолжения не нужны ваши данные.</p>
+    <div class="demo-panel">
+      <strong>Обратите внимание</strong><br>
+      Мошеннические страницы могут копировать оформление известных сервисов, чтобы вызвать доверие и подтолкнуть к вводу личных данных.
+    </div>
+    <button id="show" type="button">Показать предупреждение</button>
+    <section id="lesson" role="status" aria-live="polite">
+      <h2>Это была учебная демонстрация!</h2>
+      Ничего не вводилось и не отправлялось. Перед авторизацией всегда проверяйте адрес сайта и открывайте Telegram только через официальное приложение или telegram.org.
+      <ul>
+        <li>Не сообщайте никому код входа.</li>
+        <li>Не сканируйте неизвестные QR-коды для входа.</li>
+        <li>Не доверяйте сообщениям с угрозами и искусственной срочностью.</li>
+      </ul>
+    </section>
+    <footer>Учебный проект. Не связан с Telegram и не собирает персональные данные.</footer>
+  </main>
+  <script>
+    document.getElementById('show').addEventListener('click', function () {
+      document.getElementById('lesson').style.display = 'block';
+      this.textContent = 'Предупреждение показано';
+      this.disabled = true;
+    });
+  </script>
+</body>
+</html>
